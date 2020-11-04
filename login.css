@@ -1,0 +1,41 @@
+.login{  
+    width: auto;  
+    overflow: hidden;  
+    margin: auto;  
+    padding: 80px;  
+    background: rgba(241, 130, 81,0.75);
+    border-radius: 15px ;  
+    text-align: center;
+}  
+
+label{  
+    color: black;  
+    font-size: 17px;
+}  
+
+#Uname{
+    margin-top: 5px;  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;  
+}  
+
+#pw{  
+    margin-top: 5px;  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;   
+}   
+
+#log{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 17px;  
+    padding-left: 7px;  
+    color: black;  
+}  
