@@ -1,4 +1,5 @@
 <?php
+session_start();
 	$thisPage = "tracks";
 	require_once "nav.php";
 ?>

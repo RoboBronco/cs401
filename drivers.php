@@ -1,4 +1,5 @@
 <?php
+session_start();
 	$thisPage = "drivers";
 	require_once "nav.php";
 ?>

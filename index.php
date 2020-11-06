@@ -1,4 +1,6 @@
 <?php
+  session_start(); 
+	
 	$thisPage = "index";
 	require_once "nav.php";
 ?>

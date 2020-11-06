@@ -1,6 +1,10 @@
 <?php
+  session_start(); 
+
 	$thisPage = "leagues";
-	require_once "nav.php";
+  require_once "nav.php";
+  require_once "Dao.php";
+  $dao = new Dao();
 ?>
 <html>
 	<body>

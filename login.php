@@ -1,8 +1,7 @@
 <?php
+  session_start(); 
 	$thisPage = "login";
   require_once "nav.php";
-  $line = $_POST['Uname'] . "|" . $_POST["pw"] . "\n";
-  file_put_contents("login.txt", $line);
 ?>
 <html>
   <head>

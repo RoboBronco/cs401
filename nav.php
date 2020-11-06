@@ -1,3 +1,12 @@
+<?php
+
+if(isset($_SESSION['auth']) && $_SESSION['auth']){
+    $auth = 1;
+}else{
+    $auth = 0;
+}
+?>
+
 <html>
 	<head>
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,6 +31,9 @@
             }
             if ($thisPage=="forgotPass"){
                 echo "<title>NA Leagues - Forgot Password</title>";
+            }
+            if ($thisPage=="account"){
+                echo "<title>NA Leagues - Account</title>";
             }
         ?>
 
@@ -52,6 +64,9 @@
                 if ($thisPage=="forgotPass"){
                     echo "Password Recovery";
                 }
+                if ($thisPage=="account"){
+                    echo "Welcome to your account!";
+                }
             ?>
 		</h1>
 		<div class="topnav">
@@ -59,6 +74,6 @@
             <a <?php if ($thisPage=="leagues"){ echo "class='active'"; }?> href="leagues.php">Leagues</a>
             <a <?php if ($thisPage=="drivers"){ echo "class='active'"; }?> href="drivers.php">Drivers</a>
             <a <?php if ($thisPage=="tracks"){ echo "class='active'"; }?>href="tracks.php">Tracks</a>
-            <a <?php if ($thisPage=="login"){ echo "class='active'"; }?>href="login.php">Login</a>
-            
+            <a <?php if ($thisPage=="login" || $thisPage=="account"){ echo "class='active'"; }?>href=<?php if ($auth==0){ echo "'login.php'>Login<"; } else{ echo "'account.php'>Account<"; }?>/a>
+         
 		</div>

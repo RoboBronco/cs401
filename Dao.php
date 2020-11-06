@@ -15,15 +15,31 @@
             }
         }
 
-        public function getUsers (){
+        public function addUser($username, $password, $name){
             $conn = $this->getConnection();
-            return $conn->query("select * from user", PDO::FETCH_ASSOC);
+            $saveQuery = "insert into user(username, password, name) values (:username, :password, :name);";
+            $q = $conn->prepare($saveQuery);
+            $q->bindParam(":username", $username);
+            $q->bindParam(":password", $password);
+            $q->bindParam(":name", $name);
+            $q->execute();
         }
 
-        public function 
+        public function login ($username, $password){
+            $conn = $this->getConnection();
+            $checkQuery = "select username from user where username = :username and password = :password;";
+            $q = $conn->prepare($checkQuery);
+            $q->bindParam(":username", $username);
+            $q->bindParam(":password", $password);
+            $q->execute();
+            $login = $q->fetchAll(PDO::FETCH_OBJ);
+            return $login;
+        }
+
+        public function getLeagues(){
+            $conn = $this->getConnection();
+            return $conn->query("select * from leagues");
+        }
     }
-   
-$dao = new Dao();
-$usertable = $dao->getUsers();
-echo print_r($usertable, 1);
-echo "done\n";
+
+    ?>
