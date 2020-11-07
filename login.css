@@ -45,3 +45,24 @@ label{
     color: red;
     background-color: white;
 }
+
+table {
+    border-collapse: collapse;
+    margin: 15 0;
+  }
+  
+  
+  table, th, td {
+    border: 3px solid #CDCDCD;
+    font-size: 30px;
+  }
+  
+  th {
+    background-color: #AAAAAA;
+    padding: 10 13;
+  }
+  
+  td {
+    font-size: 30px;
+    padding: 10 13;
+  }

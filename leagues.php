@@ -4,12 +4,24 @@
 	$thisPage = "leagues";
   require_once "nav.php";
   require_once "Dao.php";
-  $dao = new Dao();
+  require_once 'table.php';
+
+  #$dao = new Dao(); 
+  
+  #renderTable();
 ?>
 <html>
+  <head>
+      <link href="login.css" type="text/css" rel="stylesheet" />	
+	</head>
 	<body>
-    <p>There's a spreadsheet here, but since I don't have it made *shrug*
-    <br>Like it's really just a spreadsheet from my database, nothing else.</p>
+  <?php
+
+    renderTable();
+
+  ?>
+
+
     <?php require_once "footer.php";?>
 
   </body>

@@ -38,7 +38,7 @@
 
         public function getLeagues(){
             $conn = $this->getConnection();
-            return $conn->query("select * from leagues");
+            return $conn->query("SELECT * FROM series_list");
         }
     }
 
