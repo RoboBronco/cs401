@@ -18,7 +18,7 @@ if(empty($_POST['pw'])){
 if($flag == 1){
     $_SESSION['auth'] = false;
     $_SESSION['Uname'] = $_POST['Uname'];
-    header("Location: http://localhost/login.php");
+    header("Location: login.php");
     exit();
 }else{
     $dao = new Dao();
@@ -27,10 +27,10 @@ if($flag == 1){
         $_SESSION['auth'] = false;
         $_SESSION['Uname'] = $_POST['Uname'];
         $_SESSION['bad'][] = "Incorrect username or password";
-        header("Location: http://localhost/login.php");
+        header("Location: login.php");
     }else{
         $_SESSION['auth'] = true;
-        header("Location: http://localhost/index.php");
+        header("Location: index.php");
     }
 }
 

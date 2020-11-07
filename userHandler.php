@@ -39,10 +39,10 @@ if($flag == 1){
   $_SESSION['cpw'] = $_POST['cpw'];
   $_SESSION['Dname'] = $_POST['Dname'];
   $_SESSION['badCreate'][] = "Account creation failed";
-  header("Location: http://localhost/createuser.php");    
+  header("Location: createuser.php");    
 }else{
   $_SESSION['create'] = true;
   $user = $dao->addUser($_POST['Uname'], $_POST['pw'], $_POST['Dname']);
-  header("Location: http://localhost/login.php");    
+  header("Location: login.php");    
 }
 ?>
