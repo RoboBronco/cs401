@@ -23,7 +23,7 @@ label{
     font-size: 17px;
 }  
 
-#Uname, #pw, #Dname{  
+#Uname, #pw, #cpw, #Dname{  
     margin-top: 5px;  
     width: 300px;  
     height: 30px;  
@@ -40,3 +40,8 @@ label{
     padding-left: 7px;  
     color: black;  
 }  
+
+.bad{
+    color: red;
+    background-color: white;
+}
