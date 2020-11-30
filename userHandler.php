@@ -12,6 +12,12 @@ if(empty($_POST['Uname'])){
   $flag = 1;
 }
 
+$notFree = $dao->checkUser(htmlspecialchars($_POST['Uname']));
+if($notFree){
+  $_SESSION['badCreate'][] = "Username is taken";
+  $flag = 1;
+}
+
 if(empty($_POST['pw'])){
   $_SESSION['badCreate'][] = "Please enter a password";
   $flag = 1;
@@ -42,7 +48,8 @@ if($flag == 1){
   header("Location: createuser.php");    
 }else{
   $_SESSION['create'] = true;
-  $user = $dao->addUser($_POST['Uname'], $_POST['pw'], $_POST['Dname']);
+  $password = hash("sha256", htmlspecialchars($_POST['pw']) . "sajdhak82u39alkh109a1");
+  $user = $dao->addUser(htmlspecialchars($_POST['Uname']), $password, htmlspecialchars($_POST['Dname']));
   header("Location: login.php");    
 }
 ?>

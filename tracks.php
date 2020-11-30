@@ -1,12 +1,22 @@
 <?php
 session_start();
 	$thisPage = "tracks";
-	require_once "nav.php";
+  require_once "nav.php";
+  require_once "Dao.php";
+  require_once 'table.php';
 ?>
 <html>
+<head>
+      <link href="login.css" type="text/css" rel="stylesheet" />	
+	</head>
 	<body>
-    <p>There's a spreadsheet here, but since I don't have it made *shrug*
-    <br>Like it's really just a spreadsheet from my database, nothing else.</p>
+  <?php
+
+    renderTrackTable();
+
+  ?>
+
+
     <?php require_once "footer.php";?>
 
   </body>

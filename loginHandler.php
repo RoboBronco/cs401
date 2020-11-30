@@ -22,10 +22,11 @@ if($flag == 1){
     exit();
 }else{
     $dao = new Dao();
-    $login = $dao->login($_POST['Uname'], $_POST['pw']);
+    $password = hash("sha256", htmlspecialchars($_POST['pw']) . "sajdhak82u39alkh109a1");
+    $login = $dao->login($_POST['Uname'], $password);
     if($login == false){
         $_SESSION['auth'] = false;
-        $_SESSION['Uname'] = $_POST['Uname'];
+        $_SESSION['Uname'] = htmlspecialchars($_POST['Uname']);
         $_SESSION['bad'][] = "Incorrect username or password";
         header("Location: login.php");
     }else{

@@ -9,6 +9,7 @@ if(isset($_SESSION['auth']) && $_SESSION['auth']){
 
 <html>
 	<head>
+        <link href='https://fonts.googleapis.com/css?family=Racing Sans One' rel='stylesheet'>
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
         <?php
             if ($thisPage=="index"){

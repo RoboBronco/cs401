@@ -2,16 +2,26 @@
   session_start(); 
 	$thisPage = "login";
   require_once "nav.php";
-
-  if(isset($_SESSION['create'])){
-    echo "New user successfully created!";
-  }
 ?>
 <html>
   <head>
-      <link href="login.css" type="text/css" rel="stylesheet" />	
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>	
+      <link href="login.css" type="text/css" rel="stylesheet" />
+      <script>
+          $(document).ready(function(){
+            $("#fadeMe").fadeOut(3000);
+          });
+      </script>
 	</head>
 	<body>
+    <?php
+      if(isset($_SESSION['create']) && !isset($_SESSION['done'])){
+        $_SESSION['done'] = true;
+    ?>
+        <div id='fadeMe'><h2>New user successfully created!</h2></div>
+    <?php
+      }
+    ?>
         <div class="login">    
         <form id="login" method="post" action="loginHandler.php">    
             <label for="Uname"><b>User Name<br>     
@@ -41,7 +51,6 @@
             <a href="forgotpass.php">Forgot Password</a>    
         </form>     
         <?php require_once "footer.php";?>
-
   </body>
 
 </html>

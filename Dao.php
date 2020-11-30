@@ -36,9 +36,29 @@
             return $login;
         }
 
+        public function checkUser ($username){
+            $conn = $this->getConnection();
+            $checkQuery = "select username from user where username = :username;";
+            $q = $conn->prepare($checkQuery);
+            $q->bindParam(":username", $username);
+            $q->execute();
+            $checkUser = $q->fetchAll(PDO::FETCH_OBJ);
+            return $checkUser;
+        }
+
         public function getLeagues(){
             $conn = $this->getConnection();
             return $conn->query("SELECT * FROM series_list");
+        }
+        
+        public function getDrivers(){
+            $conn = $this->getConnection();
+            return $conn->query("SELECT * FROM drivers");
+        }
+
+        public function getTracks(){
+            $conn = $this->getConnection();
+            return $conn->query("SELECT * FROM tracks");
         }
     }
 

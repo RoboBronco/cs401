@@ -6,9 +6,6 @@
   require_once "Dao.php";
   require_once 'table.php';
 
-  #$dao = new Dao(); 
-  
-  #renderTable();
 ?>
 <html>
   <head>
@@ -17,7 +14,7 @@
 	<body>
   <?php
 
-    renderTable();
+    renderLeagueTable();
 
   ?>
 
